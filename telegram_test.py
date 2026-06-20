@@ -8,25 +8,25 @@ CHAT_ID = "957849521"
 
 @app.route("/", methods=["GET"])
 def home():
-return "Bot is running"
+    return "Bot is running"
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-data = request.json
+    data = request.json
 
-message = data.get("message", "TradingView Alert")
+    message = data.get("message", "TradingView Alert")
 
-url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
-requests.post(
-url,
-json={
-"chat_id": CHAT_ID,
-"text": message
+    requests.post(
+    url,
+    json={
+    "chat_id": CHAT_ID,
+    "text": message
 }
 )
 
-return "OK", 200
+    return "OK", 200
 
 if __name__ == "__main__":
-app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=10000)
