@@ -8,7 +8,7 @@ CHAT_ID = "957849521"
 
 @app.route("/", methods=["GET"])
 def home():
-return "Bot is running"
+    return "Bot is running"
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
