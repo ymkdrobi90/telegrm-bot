@@ -6,11 +6,9 @@ app = Flask(__name__)
 TOKEN = "8838421364:AAEqo6oR47chV895sgDG78-HKJc5NoxLb-0"
 CHAT_ID = "957849521"
 
-
 @app.route("/", methods=["GET"])
 def home():
 return "Bot is running"
-
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
@@ -29,7 +27,6 @@ json={
 )
 
 return "OK", 200
-
 
 if __name__ == "__main__":
 app.run(host="0.0.0.0", port=10000)
