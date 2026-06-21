@@ -12,7 +12,7 @@ def home():
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    data = request.json
+    data = request.get_json(silent=True) or {}
 
     message = data.get("message", "TradingView Alert")
 
