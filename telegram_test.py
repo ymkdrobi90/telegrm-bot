@@ -21,7 +21,7 @@ else:
 
 url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
-    requests.post(
+requests.post(
     url,
     json={
         "chat_id": CHAT_ID,  
