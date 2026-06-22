@@ -12,7 +12,7 @@ def home():
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    data = request.get_json(silent=True)
+  data = request.get_json(silent=True)
 
 if data and "message" in data:
     message = data["message"]
@@ -24,12 +24,11 @@ url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 requests.post(
     url,
     json={
-        "chat_id": CHAT_ID,  
+        "chat_id": CHAT_ID,
         "text": message
-    }
+}
 )
 
     return "OK", 200
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
