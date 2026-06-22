@@ -28,7 +28,6 @@ def webhook():
     "text": message
 }
 )
-
     return "OK", 200
 
 if __name__ == "__main__":
