@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 TOKEN = "8838421364:AAEq060R47chV895sgDG78-HKJc5NoxLb-0"
-CHAT_ID = "5498535628"
+CHAT_ID = "-5498535628"
 
 @app.route("/", methods=["GET"])
 def home():
