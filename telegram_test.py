@@ -21,14 +21,15 @@ def webhook():
 
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
-    requests.post(
-        url,
-        json={
-            "chat_id": CHAT_ID,
-            "text": message
-        }
-    )
+    response = requests.post(
+    url,
+    json={
+        "chat_id": CHAT_ID,
+        "text": message
+    }
+)
 
+print(response.text)
     return "OK", 200
 
 if __name__ == "__main__":
