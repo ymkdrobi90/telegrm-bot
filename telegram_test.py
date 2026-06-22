@@ -14,20 +14,21 @@ def home():
 def webhook():
     data = request.get_json(silent=True)
 
-    if data and "message" in data:
+if data and "message" in data:
     message = data["message"]
-    else:
+else:
     message = request.get_data(as_text=True) or "TradingView Alert"
 
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
-    requests.post(
+requests.post(
     url,
     json={
     "chat_id": CHAT_ID,
     "text": message
 }
 )
+
     return "OK", 200
 
 if __name__ == "__main__":
