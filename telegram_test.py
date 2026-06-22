@@ -19,6 +19,7 @@ def webhook():
     else:
     message = request.get_data(as_text=True) or "TradingView Alert"
 
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
     requests.post(
     url,
@@ -28,7 +29,7 @@ def webhook():
 }
 )
 
-    return "OK", 200
+return "OK", 200
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
